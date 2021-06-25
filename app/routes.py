@@ -36,7 +36,6 @@ def download():
 @app.route('/download/quiz')
 def download_quiz():
     """Returns the finished powerpoint"""
-    print(session.get("questions", {}))
     try:
         CoInitialize()
         create_quiz_from_questions(session.get("questions", {}))
