@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Download</h1>
+<p>Hier kann man die fertige Powerpoint runterladen:</p>
+<br>
+<button onclick="download_powerpoint();" class="button">Download Here</button>
+
+<script>
+    function download_powerpoint(){
+        window.open("{{ url_for('download_quiz') }}", "_blank").focus();
+    }
+</script>
+
+{% endblock %}

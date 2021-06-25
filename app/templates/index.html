@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Neue Frage</h1>
+<form action="" method="post" novalidate>
+	<div class="input">
+		<label for="title">Frage:</label><br>
+		<div class="textareawrapper"><textarea class="textarea" contenteditable="true" name="title" id="title"></textarea></div>
+	</div>
+	<div class="input">
+		<label for="richtig">Richtige Antwort:</label><br>
+		<div class="textareawrapper"><textarea class="textarea" contenteditable="true" name="richtig" id="richtig"></textarea></div>
+	</div>
+	<div class="input">
+		<label for="falsch1">1. Falsche Antwort:</label><br>
+		<div class="textareawrapper"><textarea class="textarea" contenteditable="true" name="falsch1" id="falsch1"></textarea></div>
+	</div>
+	<div class="input">
+		<label for="falsch2">2. Falsche Antwort:</label><br>
+		<div class="textareawrapper"><textarea class="textarea" contenteditable="true" name="falsch2" id="falsch2"></textarea></div>
+	</div>
+	<div class="input">
+		<label for="falsch3">3. Falsche Antwort:</label><br>
+		<div class="textareawrapper"><textarea class="textarea" contenteditable="true" name="falsch3" id="falsch3"></textarea></div>
+	</div>
+	<div id="buttons">
+		<input id="submit" name="submit" type="submit" value="Submit" class="button">
+		<input id="finish" name="finish" type="submit" value="Finish" class="button">
+	</div>
+</form>
+	{% with messages = get_flashed_messages(with_categories=true) %}
+	{% if messages %}
+	<hr>
+	{% for category, message in messages %}
+	<p class="{{ category }}">{{ message }}</p>
+	{% endfor %}
+	{% endif %}
+	{% endwith %}
+
+{% endblock %}

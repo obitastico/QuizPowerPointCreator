@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="error">
+    <h1>Fehler!</h1>
+    {% if error %}
+    <p>Es ist leider folgender Fehler aufgetreten:</p>
+    <hr>
+    <p>{{ error }}</p>
+    {% else %}
+    <p>Es ist leider ein Fehler aufgetreten</p>
+    {% endif %}
+</div>
+
+{% endblock %}
